@@ -98,6 +98,7 @@ const book = {
         third: 'Destrukturyzacja',
     }
 };
+
 const chapters = book.chapters
 console.log(chapters.first);
 
