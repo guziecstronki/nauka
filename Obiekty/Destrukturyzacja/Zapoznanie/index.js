@@ -68,9 +68,13 @@
 // test()
 
 const mateusz = {name: 'Mateusz', age: 16, city:'Toruń'}
+
 const mateusz2 = ['Mateusz', 16, 'Toruń']
+
 const getPersonInfo = ({ name, age, city = 'Warszawa' }) => `Imię: ${name} age: ${age} city: ${city}`
+
 const getPersonInfo2 = ([ name, age, city = 'Warszawa' ]) => `Imię: ${name} age: ${age} city: ${city}`
+
 console.log(getPersonInfo(mateusz));
 console.log(getPersonInfo2(mateusz2));
 
@@ -102,5 +106,55 @@ const person = {
     phoneNumber: '123123123'
 }
 
-const { place: { city: { lifeLevel: {center} } } } = person
-console.log(center);
+const { place: { city: { lifeLevel: {center: centrumMiasta, outside: naObrzezach} } }, place: {street} } = person
+
+console.log(centrumMiasta);
+console.log(naObrzezach);
+console.log(street);
+
+const personTab = [
+    ['Mateusz', 16, 'Toruń'],
+    ['Weronika', 10, 'Toruń']
+]
+
+const [
+        [personOneName],
+        [personSecondName, ...moreInfo]
+    ] = personTab
+
+console.log(personOneName);
+console.log(personSecondName);
+console.log(moreInfo);
+
+const tabOfObjects = [
+    {
+        name: 'Mateusz',
+        lastName: 'Pawłowski',
+        age:16, city: 'Toruń'
+    },
+    {
+        name: 'Adrian',
+        lastName: 'Polak',
+        age:10,
+        city: 'Warszawa',
+        hobbies: ['Books', 'Sport']
+    },
+    {
+        name: 'Piotr',
+        lastName: 'Szewc',
+        age:22,
+        city: 'Kraków'
+    },
+]
+
+const [
+    {name: firstPersonName, lastName: firstPersonLastName},
+    {name: secondPersonName, hobbies: [firstHobby, secondHobby]},
+    {name: thirdPersonName}
+] = tabOfObjects
+
+console.log(firstPersonName);
+console.log(firstPersonLastName);
+console.log(secondPersonName);
+console.log(secondHobby);
+console.log(thirdPersonName);
