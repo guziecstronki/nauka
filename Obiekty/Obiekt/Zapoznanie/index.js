@@ -83,22 +83,11 @@ const cat = {
         this.catHP -= 1
     }
 }
-console.log(cat.getDamage());
-console.log(cat.getDamage());
-console.log(cat.getDamage());
+cat.getDamage()
+cat.getDamage()
+cat.getDamage()
+cat.getDamage()
+cat.getDamage()
+cat.getDamage()
+cat.getDamage()
 console.log(cat.catHP);
-
-const book = {
-    author: 'Mateusz Pawłowski',
-    title: 'Obiekty w JavaScript destrukturyzacja',
-    price: 50,
-    chapters: {
-        first: 'Wprowadzenie',
-        second: 'Czym są obiekty?',
-        third: 'Destrukturyzacja',
-    }
-};
-
-const chapters = book.chapters
-console.log(chapters.first);
-
