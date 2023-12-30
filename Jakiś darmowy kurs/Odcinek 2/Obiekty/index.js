@@ -54,29 +54,30 @@ const Person = function(name, surname, number){
     this.name = name;
     this.surname = surname;
     this.number = number;
+    this.przywitanie = function() {
+        console.log(`hello ${this.name}`);
+    }
 }
 
 const schoolClass = []
 
-for(let i = 0; i < 3; i++){
-    const name = prompt('Podaj imie')
-    const surname = prompt('Podaj nazwisko')
-    const number = prompt('Podaj numerek w dzienniku')
+// for(let i = 0; i < 3; i++){
+//     const name = prompt('Podaj imie')
+//     const surname = prompt('Podaj nazwisko')
+//     const number = prompt('Podaj numerek w dzienniku')
 
-    const person = new Person(name, surname, +number)
-    schoolClass.push(person)
-}
+//     const person = new Person(name, surname, +number)
+//     schoolClass.push(person)
+// }
 
 // lub 
 
 for(let i = 0; i < 3; i++){
-    schoolClass.push(new Person(
-        prompt('Podaj imie'),
-        prompt('Podaj nazwisko'),
-        +prompt('Podaj numerek w dzienniku')
-        ))
+    schoolClass.push(new Person(`Name ${i}`,'Nazwisko', i))
 }
 
-console.log(schoolClass);
-const sortedSchoolClass = schoolClass.toSorted((a,b) => a.number - b.number)
-console.log(sortedSchoolClass);
+// console.log(schoolClass);
+// const sortedSchoolClass = schoolClass.toSorted((a,b) => a.number - b.number)
+// console.log(sortedSchoolClass);
+
+schoolClass[0].przywitanie()
