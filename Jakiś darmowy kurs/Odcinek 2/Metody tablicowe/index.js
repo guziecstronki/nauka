@@ -1,5 +1,5 @@
-const numbers = [1, 2, 3];
-numbers.push(4)
+// const numbers = [1, 2, 3];
+// numbers.push(4)
 // console.log(numbers);
 
 // numbers.forEach(el => console.log(el))
@@ -44,6 +44,15 @@ const newCities = cities
     .map(convertToUpperCase)
 
     console.log(newCities);
+
+const numbers = [1, 2, 3];
+
+numbers.forEach((el, i ,arr) => {
+    arr[i] += 1
+    console.log(arr[i]);
+    console.log(el);
+})
+console.log(numbers);
 
 
 
