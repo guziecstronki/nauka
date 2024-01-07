@@ -9,29 +9,29 @@ const btnCounter = document.querySelector('.btn-counter')
 const clicksDisplay = document.querySelector('.clicks-display')
 const btnColorDisplay = document.querySelector('.color-btn-display')
 btnCounter.addEventListener('click', () => {
-    clicksDisplay.innerText = click()
-    btnColorDisplay.innerText = changeColor()
+    clicksDisplay.textContent = click()
+    btnColorDisplay.textContent = changeColor()
 })
 const changeColorToGreen = (element) => {
     let saturation = 0 
     let lightness = 0
     let increaseProperty = 'saturation'
     let property = 'bigger'
-    const siezeOfProperty = 100
+    const maxSizeOfProperty = 100
     const step = 10
     return function() {
-        if(saturation == siezeOfProperty || lightness == siezeOfProperty){
+        if(saturation == maxSizeOfProperty || lightness == maxSizeOfProperty){
             property = 'lower'
         }
         if(saturation >= 0 && increaseProperty == 'saturation' && property == 'bigger'){
             saturation += step
-        }else if(saturation <= siezeOfProperty && increaseProperty == 'saturation' && property == 'lower'){
+        }else if(saturation <= maxSizeOfProperty && increaseProperty == 'saturation' && property == 'lower'){
             saturation -= step
             if(saturation == 0) property = 'bigger'
             if(saturation == 0) increaseProperty = 'lightness'
         }else if(lightness >= 0 && increaseProperty == 'lightness' && property == 'bigger'){
             lightness += step
-        }else if(lightness <= siezeOfProperty && increaseProperty == 'lightness' && property == 'lower'){
+        }else if(lightness <= maxSizeOfProperty && increaseProperty == 'lightness' && property == 'lower'){
             lightness -= step
             if(lightness == 0) property = 'bigger'
             if(lightness == 0) increaseProperty = 'saturation'
@@ -50,3 +50,16 @@ const clicker = () => {
     }    
 }
 const click = clicker()
+
+const myDiv = document.querySelector('div')
+myDiv.style.backgroundColor = 'red'
+myDiv.style.width = '100px'
+myDiv.style.height = '100px'
+
+
+const element = myDiv.querySelector('p')
+const divOne = myDiv.querySelector('div')
+const divTwo = myDiv.querySelector('div div')
+console.log(element);
+console.log(divOne);
+console.log(divTwo);

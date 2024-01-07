@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .myDiv{
+            background-color: rgb(45, 144, 201);
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px 6px;
+            overflow: hidden
+        }
+        .buttons{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100px;
+        }
+        .types{
+            display: flex;
+            justify-content: space-around;
+        }
+        .results{
+            height: 150px;
+            display: flex;
+            justify-content: space-around;
+            background-color: aquamarine;
+
+        }
+        .displays{
+            height: 150px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: aqua;
+        }
+        .button{
+            width: 150px;
+            height: 30px;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }
+    </style>
+    <div class="myDiv">
+        <div class="buttons">
+            <button class="button" type="button" id="btnTextContent">
+                Kliknij
+            </button>
+            <button class="getInfo button" type="button" id="btnGetInfo">
+                Pobierz
+            </button>
+        </div>
+        <div class="types">
+            <p>innerHTML</p>
+            <p>textContent</p>
+            <p>innerText</p>
+        </div>
+        <div class="results">
+            <p class="first"></p>
+            <p class="second"></p>
+            <p class="third"></p>
+        </div>
+        <div class="displays">
+            <p class="first"></p>
+            <p class="second"></p>
+            <p class="third"></p>
+        </div>
+    </div>
+</body>
+</html>
