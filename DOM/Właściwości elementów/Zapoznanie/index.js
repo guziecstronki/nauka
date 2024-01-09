@@ -29,9 +29,8 @@ btn.addEventListener('click', function() {
     123123
     </p>`
     // dodadzą się br
+    console.log(first.getAttribute('class'));
 })
-
-
 
 btnGetInfo.addEventListener('click', () => {
     const infoInnerHTML = first.innerHTML
@@ -42,5 +41,21 @@ btnGetInfo.addEventListener('click', () => {
     displayThird.innerText = infoInnerText
 })
 
+console.log(displayFirst.tagName);
+
+console.log(first.getAttribute('class'));
+console.log(first);
+first.setAttribute('class', 'first-p')
+console.log(first.getAttribute('class'));
+console.log(first);
+console.log(first.hasAttribute('class'));
+first.removeAttribute('class')
+// console.log(first);
+console.log(myDiv.dataset.mojeInfo);
+const firstType = document.querySelector('p[data-position="left"]')
+console.log(firstType);
+firstType.addEventListener('mouseover', () => {
+    console.log(firstType.dataset.position);
+})
 
 // Zrobić tutaj do dataset a anki do dataset juz zrobione
