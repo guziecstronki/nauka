@@ -1,10 +1,13 @@
 body{
     background-color: lightslategray;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .fromToFib{
     margin: auto;
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 30%;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 10px 5px;
     border-radius: 25px;
@@ -33,4 +36,62 @@ body{
     transition: ease-in-out border 0.2s; /* Dodaj transition tylko dla border */
     border: 2px solid rgb(241, 255, 47);
     outline: 2px solid black;
+}
+.generate-button{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(63, 158, 63);
+    display: block;
+}
+.sequence-of-numbers{
+    order: -1;
+    width: 25%;
+    background-color: rgb(162, 116, 83);
+    border: 5px solid black;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 5px;
+    padding: 2.5%;
+}
+.sequence-of-numbers .number p{
+    color: white;
+    width: 100%;
+}
+.golden-proportion{
+    order: 1;
+    width: 25%;
+    background-color: rgb(162, 116, 83);
+    border: 5px solid black;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 5px;
+    padding: 2.5%;
+}
+.golden-proportion .proportion p{
+    color: white;
+    width: 100%;
+}
+.colors{
+    order: 2;
+    width: 1000px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.colors button{
+    width: 100%;
+    border-radius: 10px;
+    height: 100px;
+}
+.clicked{
+    background-color: rgb(116, 72, 174);
+}
+.number .odd{
+    color: red;
+}
+.number .even{
+    color: blue;
+}
+.number .all{
+    color: green;
 }
