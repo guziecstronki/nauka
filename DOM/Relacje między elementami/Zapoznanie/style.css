@@ -1,0 +1,106 @@
+.container{
+    width: 1000px;
+    height: 800px;
+    margin: auto;
+    background-color: #1DDB16;
+    padding: 50px;
+}
+.container p{
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    font-size: 40px;
+}
+.content{
+    width: 100%;
+    height: 90%;
+    display: flex;    
+    flex-direction: row;
+}
+.left-side{
+    width: 50%;
+    height: 100%;
+    background-color: #2B0BDB;
+    display: flex;
+    flex-flow: row wrap;
+}
+.left-side-top{
+    width: 30%;
+    height: 30%;
+    background-color: rebeccapurple;
+    margin: 10%;
+    display: flex;
+    flex-direction: column;
+}
+.left-side-top p{
+    font-size: 40px;
+}
+.left-side-top-left p, .left-side-top-right p{
+    font-size: 20px;
+}
+.left-side-top-left{
+    width: 90%;
+    height: 45%;
+    margin: 5%;
+    background-color: rgb(238, 238, 192);
+}
+.left-side-top-right{
+    width: 90%;
+    height: 45%;
+    margin: 5%;
+    background-color: gray;
+}
+.left-side-bottom{
+    width: 70%;
+    height: 20%;
+    padding: 10%;
+    background-color: rgb(51, 126, 153);
+    margin: 10%;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+}
+.left-bottom-content{
+    width: 40%;
+    height: 100%;
+    background-color: red;
+}
+.left-bottom-buttons{
+    width: 40%;
+    height: 100%;
+    background-color: #DBC316;
+}
+.button{
+    width: 95%;
+    height: 20%;
+    margin: 2%;
+    font-size: 10px;
+}
+.right-side{
+    width: 50%;
+    height: 100%;
+    background-color: #DBC316;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.added-div{
+    width: 88%;
+    height: 88%;
+    border: 10px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.color1{
+    background-color: red;   
+}
+.color2{
+    background-color: blue;   
+}
+.color3{
+    background-color: green;   
+}
+.color4{
+    background-color: yellow;   
+}
