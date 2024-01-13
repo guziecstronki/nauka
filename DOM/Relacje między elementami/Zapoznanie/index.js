@@ -15,18 +15,15 @@ const pOutsideDiv = document.querySelector('.p-outside-div')
 
 let divWhereApennd
 
-function addDiv() {
-    console.log(dives);
+function addDiv(event) {
+    event.stopPropagation();
     divWhereApennd = this
     console.log(divWhereApennd);
-    // console.log(this.ad);
 }
 
-const addClickForDives = () => {
-    dives = document.querySelectorAll('.added-div')
-    console.log(dives);
-    console.log(dives.length);
-    dives[dives.length-1].addEventListener('click', addDiv)
+const addClickForDives = (div) => {
+    div.removeEventListener('click', addDiv)
+    div.addEventListener('click', addDiv)
 }
 
 divOutsideDiv.addEventListener('click', () => {
@@ -34,7 +31,7 @@ divOutsideDiv.addEventListener('click', () => {
     div.classList.add('added-div', `color${Math.ceil(Math.random() * 4)}`)
     rightContainer.append(div)
     divWhereApennd = div
-    addClickForDives()
+    addClickForDives(div)
 })
 
 divInsideDiv.addEventListener('click', () => {
@@ -44,9 +41,9 @@ divInsideDiv.addEventListener('click', () => {
         const div = document.createElement('div')
         div.classList.add('added-div', `color${Math.ceil(Math.random() * 4)}`)
         console.log(divWhereApennd);
-        divWhereApennd.appendChild(div)
+        divWhereApennd.append(div)
         divWhereApennd = div
-        addClickForDives()
+        addClickForDives(div)
     }
 })
 

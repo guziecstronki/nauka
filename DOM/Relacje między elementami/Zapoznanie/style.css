@@ -87,7 +87,7 @@
 .added-div{
     width: 88%;
     height: 88%;
-    border: 10px solid black;
+    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
