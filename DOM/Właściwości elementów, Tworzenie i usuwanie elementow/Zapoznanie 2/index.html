@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="buttons normal">
+        <button id="add-square" class="button">+</button>
+        <button id="square-to-circle" class="button">.</button>
+        <button id="remove-elements" class="button">X</button>
+        <button id="add-words" class="button">W</button>
+        <button id="color" class="button">Color</button>
+        <div class="buttons add-buttons">
+            <button id="before" class="button">Before</button>
+            <button id="after" class="button">After</button>
+            <button id="prepend" class="button">Prepend</button>
+            <button id="append" class="button">Append</button>
+        </div>
+    </div>
+    <div class="container"></div>
+
+    <template class="squares-template">
+        <div class="square element">
+            <p class="square-number"></p>
+        </div>
+    </template>
+
+    <template class="circles-template">
+        <div class="circle element">
+            <p class="circle-number"></p>
+        </div>
+    </template>
+</body>
+</html>
