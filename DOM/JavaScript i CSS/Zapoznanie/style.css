@@ -1,0 +1,42 @@
+body{
+    background-color: #0F0F0F;
+}
+.all-items{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+}
+.container{
+    --main-color: rgb(0, 213, 255);
+    --percents: 10%;
+    --rotate: 0deg;
+    width: 70%;
+    height: 500px;
+    border: 10px solid var(--main-color);
+    margin: 1%;
+    transform: rotate(var(--rotate));
+    pointer-events: none;
+    z-index: -1;
+}
+.rectangle{
+    background: var(--main-color);
+    background: linear-gradient(90deg,  var(--main-color) var(--percents), rgba(255,255,255,0) var(--percents));
+    position: absolute;
+    left: -0.5%;
+    top: -0.5%;
+    width: 101%;
+    height: 101%;
+}
+.input-color{
+    width: 70%;
+}
+.input-rotate{
+    transform: rotate(90deg);
+    position: absolute;
+    right: -230px;
+    width: 500px;
+    align-self: flex-end;
+}
