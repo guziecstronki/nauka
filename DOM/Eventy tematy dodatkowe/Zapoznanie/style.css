@@ -1,0 +1,23 @@
+body{
+    background-color: #0F0F0F;
+    display: flex;
+    justify-content: center;
+}
+.square{
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+}
+.click{
+    background-color: rgb(115, 228, 71);
+}
+.child{
+    width: 75%;
+    height: 75%;
+    background-color: rgb(232, 52, 52);
+}
+.child-child{
+    width: 75%;
+    height: 75%;
+    background-color: rgb(43, 96, 242);
+}
