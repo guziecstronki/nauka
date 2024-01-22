@@ -11,13 +11,14 @@ body{
 .click{
     background-color: rgb(115, 228, 71);
 }
-.child{
-    width: 75%;
-    height: 75%;
-    background-color: rgb(232, 52, 52);
+
+.parent{
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
 }
-.child-child{
-    width: 75%;
-    height: 75%;
-    background-color: rgb(43, 96, 242);
+.child{
+    width: 75px;
+    height: 75px;
+    background-color: green;
 }
