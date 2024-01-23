@@ -17,23 +17,23 @@ console.log(event.clientX);
 click.dispatchEvent(visited)
 
 
-// class ParentComponent {
-//     constructor(selector) {
-//         this.element = document.querySelector(selector);
-//         this.communication();
-//     }
+class ParentComponent {
+    constructor(selector) {
+        this.element = document.querySelector(selector);
+        this.communication();
+    }
 
-//     showPassedData(data) {
-//         console.log(data);
-//     }
+    showPassedData(data) {
+        console.log(data);
+    }
 
-//     communication() {
-//         this.element.addEventListener("loadData", e => {
-//             e.stopPropagation(); //nie chce by dane poszły wyżej
-//             this.showPassedData(e.detail);
-//         })
-//     }
-// }
+    communication() {
+        this.element.addEventListener("loadData", e => {
+            e.stopPropagation(); //nie chce by dane poszły wyżej
+            this.showPassedData(e.detail);
+        })
+    }
+}
 
 
 class ChildComponent {
@@ -58,5 +58,5 @@ class ChildComponent {
 
 const childComponent = new ChildComponent(".child");
 console.log(childComponent);
-// const parentComponent = new ParentComponent(".parent");
-// console.log(parentComponent);
+const parentComponent = new ParentComponent(".parent");
+console.log(parentComponent);
