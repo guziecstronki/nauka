@@ -1,62 +1,58 @@
-const click = document.querySelector('.click')
+// const firstDiv = document.querySelector('.first')
 
-const eventt = new Event('click')
-const visited = new Event('visited')
+// firstDiv.addEventListener('click', function(e) {
+//     if(e.target == firstDiv){
+//         firstDiv.dispatchEvent(myEvent)
+//     }
+//     console.log('clicked');
 
-click.addEventListener('visited', e => console.log(e))
+// })
 
-const event = new MouseEvent("click", {
-    bubbles: true,
-    cancelable: true,
-    clientX: 200,
-    clientY: 200
-});
+// const myEvent = new Event('loadSquareData')
 
-console.log(event.clientX);
+// firstDiv.click()
 
-click.dispatchEvent(visited)
+// firstDiv.addEventListener('loadSquareData', () => {
+//     console.log({mateusz: 'ja'});
+// })
 
+const paragraphs = document.querySelector('.paragraphs')
 
-class ParentComponent {
-    constructor(selector) {
-        this.element = document.querySelector(selector);
-        this.communication();
-    }
-
-    showPassedData(data) {
-        console.log(data);
-    }
-
-    communication() {
-        this.element.addEventListener("loadData", e => {
-            e.stopPropagation(); //nie chce by dane poszły wyżej
-            this.showPassedData(e.detail);
-        })
-    }
+const getTime = (date) => {
+    let currentTime = date
+    return `${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()}`
 }
 
+const created = new CustomEvent('created')
+const deleted = new CustomEvent('deleted', {detail: getTime(new Date())})
 
-class ChildComponent {
-    constructor(selector) {
-        this.element = document.querySelector(selector);
-        this.communication();
-    }
+window.addEventListener('DOMContentLoaded', () => {
+    createP(paragraphs, 'witaj')
+    createP(paragraphs, 'swiecie')
+})
 
-    communication() {
-        this.element.addEventListener("click", e => {
-            const event = new CustomEvent("loadData", {
-                detail : {
-                    data : "Przykładowe dane przekazane"
-                },
-                bubbles : true
-            });
-            this.element.dispatchEvent(event)
-        })
-    }
+paragraphs.addEventListener('click', e => {
+    deleteElement(e.target)
+})
+
+const createP = (parent, value) => {
+    const p = document.createElement('p')
+    p.textContent = value
+    parent.append(p)
+    p.addEventListener('created', wasBorn)
+    p.addEventListener('deleted', hasDied)
+    p.dispatchEvent(created)
 }
 
+const deleteElement = (element) => {
+    element.dispatchEvent(deleted)
+    element.remove()
+}
 
-const childComponent = new ChildComponent(".child");
-console.log(childComponent);
-const parentComponent = new ParentComponent(".parent");
-console.log(parentComponent);
+const wasBorn = (e) => {
+    console.log(e.type, e.target);
+}
+
+const hasDied = (e) => {
+    console.log(e.type, e.target, e.detail);
+}

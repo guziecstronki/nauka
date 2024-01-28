@@ -1,24 +1,26 @@
-body{
-    background-color: #0F0F0F;
+body, .first{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
-.square{
-    width: 150px;
-    height: 150px;
+body{
+    background-color: #0F0F0F;
+}
+.first{
+    width: 400px;
+    height: 400px;
+    background-color: rgb(15, 107, 194);
     border-radius: 5px;
 }
-.click{
-    background-color: rgb(115, 228, 71);
-}
-
-.parent{
-    width: 100px;
-    height: 100px;
-    background-color: rebeccapurple;
-}
 .child{
-    width: 75px;
-    height: 75px;
-    background-color: green;
+    width: 50%;
+    height: 50%;
+    background-color: rgb(236, 60, 60);
+    border-radius: 5px;
+}
+p{
+    color: white;
+}
+.paragraphs{
+    width: 100px;
 }
