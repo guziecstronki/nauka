@@ -16,43 +16,65 @@
 //     console.log({mateusz: 'ja'});
 // })
 
-const paragraphs = document.querySelector('.paragraphs')
+// const paragraphs = document.querySelector('.paragraphs')
 
-const getTime = (date) => {
-    let currentTime = date
-    return `${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()}`
-}
+// const getTime = date => `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
 
-const created = new CustomEvent('created')
-const deleted = new CustomEvent('deleted', {detail: getTime(new Date())})
+// const created = new CustomEvent('created')
+// const deleted = new CustomEvent('deleted', {detail: 'Time of delete element'})
 
-window.addEventListener('DOMContentLoaded', () => {
-    createP(paragraphs, 'witaj')
-    createP(paragraphs, 'swiecie')
+// window.addEventListener('DOMContentLoaded', () => {
+//     createP(paragraphs, 'witaj')
+//     createP(paragraphs, 'swiecie')
+// })
+
+// paragraphs.addEventListener('click', e => deleteElement(e.target))
+
+// const createP = (parent, value) => {
+//     const p = document.createElement('p')
+//     p.textContent = value
+//     parent.append(p)
+//     p.addEventListener('created', wasBorn)
+//     p.addEventListener('deleted', hasDied)
+//     p.dispatchEvent(created)
+// }
+
+// const deleteElement = element => element.dispatchEvent(deleted); element.remove()
+
+
+// const wasBorn = e => console.log(e.type, e.target);
+
+// const hasDied = e => console.log(e.type, e.target, getTime(new Date()),e.detail);
+
+const myEvent = new CustomEvent('myEvent', {bubbles: false, cancelable:true})
+const button = document.querySelector('.button')
+const squares = document.querySelectorAll('.square')
+const smallSquares = document.querySelectorAll('.small-sqaure')
+
+button.addEventListener('myEvent', e => {
+    console.log(e.currentTarget, e);
 })
 
-paragraphs.addEventListener('click', e => {
-    deleteElement(e.target)
+document.addEventListener('myEvent', e => {
+    console.log(e.currentTarget, e.timeStamp);
 })
 
-const createP = (parent, value) => {
-    const p = document.createElement('p')
-    p.textContent = value
-    parent.append(p)
-    p.addEventListener('created', wasBorn)
-    p.addEventListener('deleted', hasDied)
-    p.dispatchEvent(created)
-}
+setTimeout(() => button.dispatchEvent(myEvent), 1000)
 
-const deleteElement = (element) => {
-    element.dispatchEvent(deleted)
-    element.remove()
-}
+button.dispatchEvent(myEvent)
 
-const wasBorn = (e) => {
-    console.log(e.type, e.target);
-}
+const elements = [button, document]
 
-const hasDied = (e) => {
-    console.log(e.type, e.target, e.detail);
-}
+// squares.forEach(square => {
+//     square.addEventListener('myEvent', e => {
+//         console.log(e.currentTarget);
+//     })
+// })
+
+// smallSquares.forEach(smallSquare => {
+//     smallSquare.addEventListener('myEvent', e => {
+//         console.log(e.currentTarget);
+//     })
+// })
+
+// smallSquares[2].dispatchEvent(myEvent)
