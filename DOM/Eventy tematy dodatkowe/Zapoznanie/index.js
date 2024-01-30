@@ -46,24 +46,24 @@
 
 // const hasDied = e => console.log(e.type, e.target, getTime(new Date()),e.detail);
 
-const myEvent = new CustomEvent('myEvent', {bubbles: false, cancelable:true})
-const button = document.querySelector('.button')
-const squares = document.querySelectorAll('.square')
-const smallSquares = document.querySelectorAll('.small-sqaure')
+// const myEvent = new CustomEvent('myEvent', {bubbles: false, cancelable:true})
+// const button = document.querySelector('.button')
+// const squares = document.querySelectorAll('.square')
+// const smallSquares = document.querySelectorAll('.small-sqaure')
 
-button.addEventListener('myEvent', e => {
-    console.log(e.currentTarget, e);
-})
+// button.addEventListener('myEvent', e => {
+//     console.log(e.currentTarget, e);
+// })
 
-document.addEventListener('myEvent', e => {
-    console.log(e.currentTarget, e.timeStamp);
-})
+// document.addEventListener('myEvent', e => {
+//     console.log(e.currentTarget, e.timeStamp);
+// })
 
-setTimeout(() => button.dispatchEvent(myEvent), 1000)
+// setTimeout(() => button.dispatchEvent(myEvent), 1000)
 
-button.dispatchEvent(myEvent)
+// button.dispatchEvent(myEvent)
 
-const elements = [button, document]
+// const elements = [button, document]
 
 // squares.forEach(square => {
 //     square.addEventListener('myEvent', e => {
