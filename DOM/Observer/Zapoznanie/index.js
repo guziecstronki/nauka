@@ -125,3 +125,6 @@ const input = document.querySelector("input");
 input.addEventListener("input", e => {
     inputObserver.emit(input.value)
 })
+
+
+// zadania
