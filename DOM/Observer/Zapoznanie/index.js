@@ -128,3 +128,4 @@ input.addEventListener("input", e => {
 
 
 // zadania
+// bookmarklety
