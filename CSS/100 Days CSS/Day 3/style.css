@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.frame{
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+    background-color: #272C34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.content{
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.sky{
+    width: 100%;
+    background-color: #7DDFFC;
+    height: 123px;
+}
+.sand{
+    width: 100%;
+    background-color: #F0DE75;
+    height: 52px;
+}
+.pyramid-left{
+    background-color: white;
+    position: absolute;
+    top: 67px;
+    left: 35px;
+    height: 57px;
+    width: 116px;
+    clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+}
+.pyramid-right{
+    position: absolute;
+    top: 67px;
+    left: 93px;
+    height: 57px;
+    width: 58px;
+    background: #DDDADA;
+    clip-path: polygon(30% 100%, 100% 100%, 0% 0%);
+}
+.sun{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background-color: yellow;
+    border-radius: 50%;
+    left: 20px;
+    top: 20px;
+}
