@@ -43,6 +43,7 @@ body{
     height: 57px;
     width: 116px;
     clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+    animation: pyramid-left-color 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
 }
 .pyramid-right{
     position: absolute;
@@ -52,6 +53,7 @@ body{
     width: 58px;
     background: #DDDADA;
     clip-path: polygon(30% 100%, 100% 100%, 0% 0%);
+    animation: pyramid-right-color 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
 }
 .sun{
     width: 35px;
@@ -59,6 +61,66 @@ body{
     position: absolute;
     background-color: yellow;
     border-radius: 50%;
-    left: 20px;
-    top: 20px;
+    left: -10px;
+    top: 100px;
+    animation: sun-road 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+.shadow{
+    position: absolute;
+    top: 123px;
+    left: 33px;
+    height: 17px;
+    width: 125px;
+    background: #DDDADA;
+    clip-path: polygon(100% 100%, 100% 0%, 0% 0%);
+}
+@keyframes sun-road {
+    0%{
+        left: -10px;
+        top: 100px;
+    }
+    30%{
+        left: 15px;
+        top: 20px;
+    }
+    60%{
+        left: 140px;
+        top: 20px;
+    }
+    100%{
+        left: 155px;
+        top: 100px;
+    }
+}
+
+@keyframes pyramid-left-color {
+    0%{
+        background-color: white; 
+    }
+    30%{
+        background-color: #efefef;
+    }
+    50%{
+        background-color: #c3c3c3;
+    }
+    100%{
+        background-color: #bebebe;
+    }
+}
+@keyframes pyramid-right-color {
+    0%{
+        background-color: #bebebe; 
+    }
+    30%{
+        background-color: #c3c3c3;
+    }
+    50%{
+        background-color: #efefef;
+    }
+    100%{
+        background-color: white;
+    }
+}
+@keyframes pyramid-shadow{
+
 }
